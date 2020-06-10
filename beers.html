@@ -1,192 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Garage project</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/product/">
-  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Garage project</title>
+        <link
+            rel="canonical"
+            href="https://getbootstrap.com/docs/4.3/examples/product/"
+        />
+        <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Bootstrap core CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-</head>
-<body>
-  <div class="site-header py-1 position-relative">
-    <div class="container d-flex flex-md-row justify-content-center py-4">
-      <h1 class="heading text-center">Garage Project</h1>
-    </div>
-    <!-- <i class="fas fa-shopping-cart"></i> -->
-  </div>
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="site-header py-1 position-relative">
+            <div
+                class="container d-flex flex-md-row justify-content-center py-3"
+            >
+                <h1 class="heading text-center">Garage Project</h1>
+            </div>
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+        </div>
 
-  <div class="position-relative zindex text-center bg-light">
-    <div class="w-100 col-xl-10 col-md-10 col-lg-12 p-lg-5 mx-auto my-3 d-flex justify-content-between align-items-center">
-      <p class="my-0" id="product-amount"></p> <!-- js prints number of products here -->
-      <div class="col-md-6 display-on-desk">
-        <ul class="list">
-          <li class="list-item">
-            <div class="btn-group">
-              <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Style</button>
-              <div class="dropdown-menu">
-                <div class="form-group d-flex align-items-baseline ml-5">
-                  <input class="form-check-input" name="styles" type="checkbox" id="ipa-style">
-                  <label class="form-check-label" for="ipa-style">IPA</label>
-                </div>
-                <div class="form-group d-flex align-items-baseline ml-5">
-                  <input class="form-check-input" name="styles" type="checkbox" id="ale-style">
-                  <label class="form-check-label" for="ale-style">Pale Ale</label>
-                </div>
-                <div class="form-group d-flex align-items-baseline ml-5">
-                  <input class="form-check-input" name="styles" type="checkbox" id="lager-style">
-                  <label class="form-check-label" for="lager-style">Lager</label>
-                </div>
-                <div class="form-group d-flex align-items-baseline ml-5">
-                  <input class="form-check-input" name="styles" type="checkbox" id="sour-style">
-                  <label class="form-check-label" for="sour-style">Sour</label>
-                </div>
-
-              </div>
-            </div></li>
-            <li class="list-item">
-              <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Volume</button>
-                <div class="dropdown-menu">
-                  <div class="form-group d-flex align-items-baseline ml-5">
-                    <input class="form-check-input" name="volumes" name="volumes" name="volumes" type="checkbox" id="330-volume">
-                    <label class="form-check-label" for="330-volume">330ml</label>
-                  </div>
-                  <div class="form-group d-flex align-items-baseline ml-5">
-                    <input class="form-check-input" name="volumes" name="volumes" type="checkbox" id="440-volume">
-                    <label class="form-check-label" for="440-volume">440ml</label>
-                  </div>
-                  <div class="form-group d-flex align-items-baseline ml-5">
-                    <input class="form-check-input" name="volumes" type="checkbox" id="Pack-volume">
-                    <label class="form-check-label" for="Pack-volume">Pack</label>
-                  </div>
-                </div>
-              </div></li>
-              <li class="list-item">
-                <div class="btn-group">
-                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alcohol Percentage</button>
-                  <div class="dropdown-menu">
-                    <p>
-                      <label for="amount1">Price range:</label>
-                      <input type="text" id="amount1" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                    </p>
-                    <div id="slider-range1"></div>
-                  </div>
-                </div></li>
-                <li class="list-item">
-                  <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Price</button>
-                    <div class="dropdown-menu">
-
-                      <p>
-                        <label for="amount2">Price range:</label>
-                        <input type="text" id="amount2" readonly style="border:0; color:#f6931f; font-weight:bold;">
-                      </p>
-                      <div id="slider-range2"></div>
-
-                    </div>
-                  </div></li>
-                  <li class="list-item">
-                    <div class="btn-group">
-                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div></li>
-                  </ul>
+        <div class="position-relative zindex text-center bg-light">
+            <div
+                class="w-100 col-xl-10 col-lg-11 col-10 p-3 mx-auto my-3 d-flex justify-content-between align-items-center"
+            >
+                <p class="my-0" id="product-amount"></p>
+                <!-- js prints number of products here -->
+                <div class="col-md-6 display-on-desk">
+                    <ul class="list">
+                        <li class="list-item">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Style
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="styles"
+                                            type="checkbox"
+                                            id="ipa-style"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="ipa-style"
+                                            >IPA</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="styles"
+                                            type="checkbox"
+                                            id="ale-style"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="ale-style"
+                                            >Pale Ale</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="styles"
+                                            type="checkbox"
+                                            id="lager-style"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="lager-style"
+                                            >Lager</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="styles"
+                                            type="checkbox"
+                                            id="sour-style"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="sour-style"
+                                            >Sour</label
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Volume
+                                </button>
+                                <div class="dropdown-menu">
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="volumes"
+                                            name="volumes"
+                                            name="volumes"
+                                            type="checkbox"
+                                            id="330-volume"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="330-volume"
+                                            >330ml</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="volumes"
+                                            name="volumes"
+                                            type="checkbox"
+                                            id="440-volume"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="440-volume"
+                                            >440ml</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="form-group d-flex align-items-baseline ml-5"
+                                    >
+                                        <input
+                                            class="form-check-input"
+                                            name="volumes"
+                                            type="checkbox"
+                                            id="Pack-volume"
+                                        />
+                                        <label
+                                            class="form-check-label"
+                                            for="Pack-volume"
+                                            >Pack</label
+                                        >
+                                    </div>
+                                </input>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Alcohol Percentage
+                                </button>
+                                <div class="dropdown-menu">
+                                    <p>
+                                        <label for="amount1"
+                                            >Price range:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="amount1"
+                                            readonly
+                                            style="
+                                                border: 0;
+                                                color: #f6931f;
+                                                font-weight: bold;
+                                            "
+                                        />
+                                    </p>
+                                    <div id="slider-range1"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Price
+                                </button>
+                                <div class="dropdown-menu">
+                                    <p>
+                                        <label for="amount2"
+                                            >Price range:</label
+                                        >
+                                        <input
+                                            type="text"
+                                            id="amount2"
+                                            readonly
+                                            style="
+                                                border: 0;
+                                                color: #f6931f;
+                                                font-weight: bold;
+                                            "
+                                        />
+                                    </p>
+                                    <div id="slider-range2"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="btn-group">
+                                <button
+                                    type="button"
+                                    class="btn dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    Sort
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#"
+                                        >Another action</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                    >
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"
+                                        >Separated link</a
+                                    >
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <p class="my-0" id="filter-menu">Filter +</p>
-                <button class="btn btn-outline-primary my-0 display-on-desk" id="reset-filters">Reset Filters</button>
-              </div>
+                <button
+                    class="btn btn-outline-secondary my-0 display-on-desk"
+                    id="reset-filters"
+                >
+                    Reset Filters
+                </button>
             </div>
+        </div>
 
-
-            <!-- full screen filter page -->
-            <div class="filter-menu-container">
-              <div class="filter-menu-header">
+        <!-- full screen filter page -->
+        <div class="filter-menu-container">
+            <div class="filter-menu-header">
                 <h1 class="filter-menu-heading">Filter</h1>
                 <button type="button" class="close-menu" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
-              <div class="filter-menu-body">
+            </div>
+            <div class="filter-menu-body">
                 <h2 class="filter-menu-filter">Style</h2>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" name="styles" type="checkbox" id="all-styles">
-                  <label class="form-check-label" for="all-styles">All</label>
+                    <input
+                        class="form-check-input"
+                        name="styles"
+                        type="checkbox"
+                        id="all-styles"
+                    />
+                    <label class="form-check-label" for="all-styles">All</label>
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" name="styles" type="checkbox" id="ipa-styles">
-                  <label class="form-check-label" for="ipa-styles">IPA</label>
+                    <input
+                        class="form-check-input"
+                        name="styles"
+                        type="checkbox"
+                        id="ipa-styles"
+                    />
+                    <label class="form-check-label" for="ipa-styles">IPA</label>
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" name="styles" type="checkbox" id="ale-styles">
-                  <label class="form-check-label" for="ale-styles">Pale Ale</label>
+                    <input
+                        class="form-check-input"
+                        name="styles"
+                        type="checkbox"
+                        id="ale-styles"
+                    />
+                    <label class="form-check-label" for="ale-styles"
+                        >Pale Ale</label
+                    >
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" name="styles" type="checkbox" id="lager-styles">
-                  <label class="form-check-label" for="lager-styles">Lager</label>
+                    <input
+                        class="form-check-input"
+                        name="styles"
+                        type="checkbox"
+                        id="lager-styles"
+                    />
+                    <label class="form-check-label" for="lager-styles"
+                        >Lager</label
+                    >
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" name="styles" type="checkbox" id="sour-styles">
-                  <label class="form-check-label" for="sour-styles">Sour</label>
+                    <input
+                        class="form-check-input"
+                        name="styles"
+                        type="checkbox"
+                        id="sour-styles"
+                    />
+                    <label class="form-check-label" for="sour-styles"
+                        >Sour</label
+                    >
                 </div>
                 <h2 class="filter-menu-filter">Volume</h2>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" type="checkbox" id="all-volumes">
-                  <label class="form-check-label" for="all-volumes">All</label>
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="all-volumes"
+                    />
+                    <label class="form-check-label" for="all-volumes"
+                        >All</label
+                    >
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" type="checkbox" id="330-volumes">
-                  <label class="form-check-label" for="330-volumes">330ml</label>
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="330-volumes"
+                    />
+                    <label class="form-check-label" for="330-volumes"
+                        >330ml</label
+                    >
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" type="checkbox" id="440-volumes">
-                  <label class="form-check-label" for="440-volumes">440ml</label>
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="440-volumes"
+                    />
+                    <label class="form-check-label" for="440-volumes"
+                        >440ml</label
+                    >
                 </div>
                 <div class="form-group ml-4">
-                  <input class="form-check-input" type="checkbox" id="Pack-volumes">
-                  <label class="form-check-label" for="Pack-volumes">Pack</label>
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="Pack-volumes"
+                    />
+                    <label class="form-check-label" for="Pack-volumes"
+                        >Pack</label
+                    >
                 </div>
                 <h2 class="filter-menu-filter">Alcohol Percentage</h2>
                 <p>
-                  <label for="amount3">Price range:</label>
-                  <input type="text" id="amount3" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <label for="amount3">Price range:</label>
+                    <input
+                        type="text"
+                        id="amount3"
+                        readonly
+                        style="border: 0; color: #f6931f; font-weight: bold;"
+                    />
                 </p>
                 <div id="slider-range3"></div>
                 <h2 class="filter-menu-filter">Price</h2>
                 <p>
-                  <label for="amount4">Price range:</label>
-                  <input type="text" id="amount4" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <label for="amount4">Price range:</label>
+                    <input
+                        type="text"
+                        id="amount4"
+                        readonly
+                        style="border: 0; color: #f6931f; font-weight: bold;"
+                    />
                 </p>
                 <div id="slider-range4"></div>
-              </div>
             </div>
+        </div>
 
+        <div id="printOutput"></div>
 
-            <div id="printOutput"></div>
+        <div class="myModal-outer" id="modal-output"></div>
 
-            <div class="myModal-outer" id="modal-output"></div>
+        <div class="footer bg-light">
+            &copy; 2019 Sean Reilly. For educational purposes only
+        </div>
 
-            <div class="footer bg-light">
-              &copy; 2019 Sean Reilly. For educational purposes only
-            </div>
-
-            <script src="https://kit.fontawesome.com/6c7bb61f4b.js" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-            <script src="js/script.js"></script>
-          </body>
-          </html>
+        <script
+            src="https://kit.fontawesome.com/6c7bb61f4b.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

@@ -219,7 +219,7 @@ function printItems(array){
 			card += '<p class="lead">' + array[i].vessel+'</p>'
 		}
 		card +='<div class="d-flex justify-content-between align-items-center"><h2 class="beer-price mb-0">$'+array[i].price.toFixed(2) +'</h2>'
-		+'<button class="btn btn-danger">Add to cart</button>'
+		+'<button class="btn btn-outline-success">Add to cart</button>'
 		+'</div></div>'
 		+'<p class="view-more" id='+array[i].image+'>VIEW DETAILS</p>'
 		+'<div class="mx-3 img-container"><img class="beer-image" src="images/'+array[i].image+'.png"></div></div>';
